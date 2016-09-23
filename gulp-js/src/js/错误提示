@@ -1,0 +1,43 @@
+1.
+$ gulp srcipt
+module.js:442
+    throw err;
+    ^
+
+Error: Cannot find module 'gulp-uglify'
+    at Function.Module._resolveFilename (module.js:440:15)
+    at Function.Module._load (module.js:388:25)
+    at Module.require (module.js:468:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (D:\工作\yzren\gulp\gulp-demo\gulp-js\gulpfile.js:5:13)
+    at Module._compile (module.js:541:32)
+    at Object.Module._extensions..js (module.js:550:10)
+    at Module.load (module.js:458:32)
+    at tryModuleLoad (module.js:417:12)
+    at Function.Module._load (module.js:409:3)
+
+
+此时因为没有安装gulp-uglify
+
+
+
+
+2.
+$ gulp auto
+[17:57:17] Using gulpfile D:\工作\yzren\gulp\gulp-demo\gulp-js\gulpfile.js
+[17:57:17] Starting 'auto'...
+[17:57:17] 'auto' errored after 483 μs
+[17:57:17] ReferenceError: script is not defined
+    at Gulp.<anonymous> (D:\工作\yzren\gulp\gulp-demo\gulp-js\gulpfile.js:13:28)
+    at module.exports (D:\工作\yzren\gulp\gulp-demo\gulp-js\node_modules\orchestrator\lib\runTask.js:34:7)
+    at Gulp.Orchestrator._runTask (D:\工作\yzren\gulp\gulp-demo\gulp-js\node_modules\orchestrator\index.js:273:3)
+    at Gulp.Orchestrator._runStep (D:\工作\yzren\gulp\gulp-demo\gulp-js\node_modules\orchestrator\index.js:214:10)
+    at Gulp.Orchestrator.start (D:\工作\yzren\gulp\gulp-demo\gulp-js\node_modules\orchestrator\index.js:134:8)
+    at C:\Users\happy\AppData\Roaming\npm\node_modules\gulp\bin\gulp.js:129:20
+    at _combinedTickCallback (internal/process/next_tick.js:67:7)
+    at process._tickCallback (internal/process/next_tick.js:98:9)
+    at Function.Module.runMain (module.js:577:11)
+    at startup (node.js:160:18)
+此时因为
+gulp.watch('src/js/*.js',[script])
+script没有加引号，未定义

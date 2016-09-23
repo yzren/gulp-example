@@ -1,0 +1,47 @@
+module.js:442
+    throw err;
+    ^
+
+Error: Cannot find module 'gulp-imagemin'
+    at Function.Module._resolveFilename (module.js:440:15)
+    at Function.Module._load (module.js:388:25)
+    at Module.require (module.js:468:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (D:\工作\yzren\gulp\gulp-demo\gulp-img\gulpfile.js:2:15)
+    at Module._compile (module.js:541:32)
+    at Object.Module._extensions..js (module.js:550:10)
+    at Module.load (module.js:458:32)
+    at tryModuleLoad (module.js:417:12)
+    at Function.Module._load (module.js:409:3)
+
+原因是没有安装
+gulp-imagemin
+
+
+$ npm install
+npm ERR! Windows_NT 10.0.10586
+npm ERR! argv "D:\\tool\\node\\node.exe" "D:\\tool\\node\\node_modules\\npm\\bin                                                                                                                \\npm-cli.js" "install"
+npm ERR! node v6.2.0
+npm ERR! npm  v3.8.9
+npm ERR! file D:\工作\yzren\gulp\gulp-demo\gulp-img\package.json
+npm ERR! code EJSONPARSE
+
+npm ERR! Failed to parse json
+npm ERR! Trailing comma in object at 13:3
+npm ERR!   }
+npm ERR!   ^
+npm ERR! File: D:\工作\yzren\gulp\gulp-demo\gulp-img\package.json
+npm ERR! Failed to parse package.json data.
+npm ERR! package.json must be actual JSON, not just JavaScript.
+npm ERR!
+npm ERR! This is not a bug in npm.
+npm ERR! Tell the package author to fix their package.json file. JSON.parse
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     D:\工作\yzren\gulp\gulp-demo\gulp-img\npm-debug.log
+
+
+错误原因package.json包  devDependencies 对象中的属性加了逗号
+"devDependencies": {
+    "gulp": "^3.9.1",
+  }
